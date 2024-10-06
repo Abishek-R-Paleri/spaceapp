@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="game.css" />
+    <title>Planet Habitability Game</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Planet Habitability Game</h1>
+      <p>Enter the details below to see if the planet could potentially support life.</p>
+      
+      <form id="planet-form">
+        <label for="distance">Distance from Sun (in AU):</label>
+        <input type="number" id="distance" name="distance" min="0" step="0.1" required />
+
+        <label for="type">Planet Type:</label>
+        <select id="type" name="type" required>
+          <option value="rocky">Rocky</option>
+          <option value="gas-giant">Gas Giant</option>
+          <option value="ice-giant">Ice Giant</option>
+        </select>
+
+        <button type="button" onclick="checkHabitability()">Check Habitability</button>
+      </form>
+
+      <p id="result"></p>
+    </div>
+
+    <script src="game.js"></script>
+    <div class="video-background">
+        <video autoplay muted loop id="bgVideo">
+            <source src="856309-hd_1920_1080_30fps.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="content">
+            <!-- Your main content goes here -->
+        </div>
+    </div>
+  </body>
+</html>

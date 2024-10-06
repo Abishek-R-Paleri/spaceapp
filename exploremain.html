@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="explorestyle.css" />
+    <title>Cosmic</title>
+  </head>
+  <body>
+    <div class="parallax__container">
+      <img src="bg1.png" alt="parallax" />
+      <img id="bg-2" src="bg2.png" alt="parallax" />
+      
+      <img id="bg-3" src="bg2.png" alt="parallax" />
+      <h1 id="title">EXPLORE</h1>
+    </div>
+    <section class="about">
+      <div class="image__gallary">
+        <div class="image__card" id="image__card-1">
+          <img src="exo6.jpeg" alt="grid" />
+        </div>
+        <div class="image__card" id="image__card-2">
+          <img src="exo4.jpg" alt="grid" />
+        </div>
+        <div class="image__card" id="image__card-3">
+          <img src="exo5.jpg" alt="grid" />
+        </div>
+        <div class="image__card" id="image__card-4">
+          <img src="exo1.jpg" alt="grid" />
+        </div>
+      </div>
+      <div class="details">
+        An exoplanet is any planet beyond our solar system. Most of them orbit other stars, but some free-floating exoplanets, called rogue planets, are untethered to any star. We’ve confirmed more than 5,600 exoplanets out of the billions that we believe exist.
+        Some of the exoplanets are Kepler-186f,Kepler-452B,Kepler-16b,Kepler-62f
+      </div>
+      
+    </section>
+
+    <script>
+      var title = document.getElementById("title");
+      var bg_2 = document.getElementById("bg-2");
+      var bg_3 = document.getElementById("bg-3");
+
+      var image_card_1 = document.getElementById("image__card-1");
+      var image_card_2 = document.getElementById("image__card-2");
+      var image_card_3 = document.getElementById("image__card-3");
+      var image_card_4 = document.getElementById("image__card-4");
+
+      document.addEventListener("scroll", (event) => {
+        var positionY = window.scrollY;
+
+        title.style.fontSize = `${100 + positionY * 0.5}px`;
+
+        bg_2.style.top = `-${positionY * 0.5}px`;
+        bg_3.style.top = `-${positionY}px`;
+        bg_3.style.scale = 1 + positionY * 0.001;
+
+        image_card_1.style.transform = `translateY(${
+          positionY * -0.5 + 400
+        }px)`;
+
+        image_card_2.style.transform = `translateY(${positionY * 0.1 + -50}px)`;
+
+        image_card_3.style.transform = `translateY(${
+          positionY * -0.1 + 100
+        }px)`;
+
+        image_card_4.style.transform = `translateY(${
+          positionY * 0.2 + -125
+        }px)`;
+
+        var _newOpacity = positionY * 0.001;
+        if (_newOpacity >= 0 && _newOpacity <= 1) {
+          image_card_1.style.opacity = _newOpacity;
+          image_card_2.style.opacity = _newOpacity;
+          image_card_3.style.opacity = _newOpacity;
+          image_card_4.style.opacity = _newOpacity;
+        }
+      });
+    </script>
+  </body>
+</html>

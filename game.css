@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-size: cover;
+    color: #ffffff;
+  }
+  
+  .container {
+    text-align: center;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  label, select, input {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .video-background {
+    position: absolute;
+    z-index: -1;
+    height: 100vh; /* Adjust based on your needs */
+    width: 100vw;  /* Full viewport width */
+    overflow: hidden; /* Ensures content inside doesn't overflow */
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%; /* Ensure video covers the entire width */
+    min-height: 100%; /* Ensure video covers the entire height */
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Send the video to the background */
+    object-fit: cover; /* Ensures the video covers the container without distortion */
+}
+
+.video-background .content {
+    position: relative;
+    z-index: 1; /* Makes sure content is above the video */
+    color: #fff; /* Adjust text color if needed */
+    padding: 50px;
+}
